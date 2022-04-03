@@ -1,0 +1,56 @@
+﻿@model Divers_Hotel.Models.RoomType
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>Room Type</h4>
+    <hr />
+    <div class="container ">
+        <div class="row text-center">
+            <div class="card text-white text-center m-5 col-md-7">
+                <div class="card-header bg-info">Room details</div>
+                <div class="card-body text-dark">
+                    <h4 class="card-title bg-light">
+                        <i class="fa fa-dollar-sign"></i>
+                        <strong style="font-size: 3em;">
+                            @Html.DisplayFor(model => model.RoomPrice)<span> $</span>
+                        </strong>
+                    </h4>
+                    <p class="card-text">
+                        <h3>
+                            @Html.DisplayFor(model => model.Name)
+                        </h3>
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <div>
+                        <a asp-action="Index" class="btn btn-info">Back to List</a>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+            <!--<dl class="row">
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.Name)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.Name)
+                </dd>
+
+                <dt class="col-sm-3">
+                    @Html.DisplayNameFor(model => model.RoomPrice)
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.RoomPrice)<span>$</span>
+                </dd>
+            </dl>
+        </div>
+        <div>-->
+            @*<a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-dark">Edit</a>*@ <!--|
+            <a asp-action="Index" class="btn btn-info">Back to List</a>-->
+        </div>

@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Divers_Hotel.Models.RoomSeasonal>
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer 
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-success">@localizer["Create New Room Season"]</a>
+
+</p>
+<table class="table table-bordered table-hover text-center">
+    <thead class="bg-secondary text-white text-center">
+        <tr>
+            <th>
+                @localizer["Room"]
+            </th>
+           
+            <th>
+                @localizer["Season"]
+            </th>
+            <th>
+                @localizer["Price"]
+            </th>
+            <th>
+                @localizer["Controlls"]
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          <th>
+              @Html.DisplayFor(modelItem=> item.Room.Name)
+          </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.Season.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price) @localizer["$"]
+            </td>
+            <td class="text-center">
+                @Html.ActionLink(localizer.GetString("Edit"), "Edit", new {item.SeasonId, item.RoomId }, new { @class= "btn btn-outline-dark" }) |
+                @Html.ActionLink(localizer.GetString("Details"), "Details", new { item.SeasonId, item.RoomId }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink(localizer.GetString("Delete"), "Delete", new { item.SeasonId, item.RoomId }, new { @class = "btn btn-outline-danger" })
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

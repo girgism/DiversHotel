@@ -1,0 +1,116 @@
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer 
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4"> @localizer["Welcome"]</h1>
+    <h5>@localizer["Divers Hotel It's a Hotel as you Dream that you found , Welcome All"]</h5><hr /><br />
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-success">@localizer["Season"] 1</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">45<sup>.45</sup></strong>
+                </h4>
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Comfort <b>Rooms</b>
+                </p>
+
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Delicious <b>Meals</b>
+                </p>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Create" asp-controller="Reservations" class="btn btn-success">
+                    @localizer["Book Now"]
+                </a>
+            </div>
+        </div>
+
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-success">@localizer["Season"] 2</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">104<sup>.5</sup></strong>
+                </h4>
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Comfort <b>Rooms</b>
+                </p>
+
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Delicious <b>Meals</b>
+                </p>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Create" asp-controller="Reservations" class="btn btn-success">
+                    @localizer["Book Now"]
+                </a>
+            </div>
+        </div>
+
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-success">@localizer["Season"] 3</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">120<sup>.05</sup></strong>
+                </h4>
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Comfort <b>Rooms</b>
+                </p>
+
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Delicious <b>Meals</b>
+                </p>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Create" asp-controller="Reservations" class="btn btn-success">
+                    @localizer["Book Now"]
+                </a>
+            </div>
+        </div>
+
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-success">@localizer["Season"] 4</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">444<sup>.45</sup></strong>
+                </h4>
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Comfort <b>Rooms</b>
+                </p>
+
+                <p class="card-text">
+                    <i class="fa fa-check" style="color: green;"></i>
+                    Delicious <b>Meals</b>
+                </p>
+            </div>
+            <div class="card-footer">
+                <a asp-action="Create" asp-controller="Reservations" class="btn btn-success">
+                    @localizer["Book Now"]
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<hr />
+<br />

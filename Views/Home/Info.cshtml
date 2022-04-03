@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+
+
+@inject IViewLocalizer localizer
+@inject SignInManager<CustomIdentityUser> SignInManager
+@inject UserManager<CustomIdentityUser> UserManager
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h5 class="display-4">
+        @localizer["Welcome back"] : @User.Identity.Name
+    </h5>
+    
+</div>
+<hr /><hr />
+<br />
+
+<div class="container-fluid">
+    <div class="row" style="font-style:italic;">
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-info">@localizer["All Rooms"]</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">
+                        @ViewData["Rooms"]
+                    </strong>
+                </h4>
+            </div>
+        </div>
+
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-info">@localizer["All Meals"]</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">
+                        @ViewData["Meals"]
+                    </strong>
+                </h4>
+            </div>
+        </div>
+
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-info">@localizer["All Reservations"]</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">
+                        @ViewData["Reservations"]
+                    </strong>
+                </h4>
+            </div>
+        </div>
+
+        <div class="card text-white text-center mb-2 col-md-3">
+            <div class="card-header bg-info">@localizer["All Seasons"]</div>
+            <div class="card-body text-dark">
+                <h4 class="card-title bg-light">
+                    <i class="fa fa-dollar-sign"></i>
+                    <strong style="font-size: 3em;">
+                        @ViewData["Seasons"]
+                    </strong>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <hr /><hr /><br />
+</div>

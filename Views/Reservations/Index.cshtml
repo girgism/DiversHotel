@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Divers_Hotel.Models.Reservation>
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer localizer
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+@{ if (TempData["GName"] != null)
+    {
+        <div class="alert  alert-success">
+            <h4 class="alert-heading">Reservation Process Done :) </h4>
+            <p class="mb-0">Welcom MR : @TempData["GName"] </p>
+            <p>the Total Price will be : <span font-weight:bold">@TempData["Price"] $</span> </p>
+        </div>
+    }
+}
+
+<p>
+    <a asp-action="Create" class="btn btn-outline-success">@localizer["Create New Reservation"]</a>
+
+</p>
+<table class="table table-bordered table-hover text-center">
+    <thead class="bg-secondary text-white text-center">
+        <tr>
+            <th>
+                @localizer["GuestName"]
+            </th>
+            <th>
+                @localizer["CheckIn"]
+            </th>
+            <th>
+                @localizer["CheckOut"]
+            </th>
+            <th>
+                @localizer["Meal"]
+            </th>
+            <th>
+                @localizer["Room"]
+            </th>
+            <th>
+                @localizer["TotalPrice"]
+            </th>
+            <th>
+                @localizer["Controlls"]
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GuestName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckIn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CheckOut)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Meal.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Room.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalPrice) @localizer["$"]
+                </td>
+                <td class="text-center">
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-dark">@localizer["Edit"] </a> |
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info mb-0">@localizer["Details"]</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger mb-0">@localizer["Delete"]</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

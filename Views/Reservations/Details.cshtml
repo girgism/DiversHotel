@@ -1,0 +1,190 @@
+﻿@model Divers_Hotel.Models.Reservation
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+@{ if (ViewData["GName"] != null)
+    {
+        <div class="alert  alert-success">
+            <h4 class="alert-heading">Reservation Process Done :) </h4>
+            <p class="mb-0">Welcom MR : @TempData["GName"] </p>
+            <p>the Total Price will be : <span font-weight:bold">@TempData["Price"] $</span> </p>
+        </div>
+    }
+}
+
+
+<div>
+    <h4 class="text-info">Reservation</h4>
+    <hr />
+
+    <div class="container ">
+        <div class="row">
+            <div class="card text-white text-center col-md-6">
+                <h4 class="card-header bg-info">Reservation details</h4>
+                <div class="card-body text-dark">
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4 text-left">
+                            @Html.DisplayNameFor(model => model.GuestName) :
+                        </strong>
+                        <strong class="col-md-8 text-left">
+                            @Html.DisplayFor(model => model.GuestName)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4 text-left">
+                            @Html.DisplayNameFor(model => model.GuestEmail) :
+                        </strong>
+                        <strong class="col-md-8 text-left">
+                            @Html.DisplayFor(model => model.GuestEmail)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4 text-left">
+                            @Html.DisplayNameFor(model => model.GuestCountry) :
+                        </strong>
+                        <strong class="col-md-8 text-left">
+                            @Html.DisplayFor(model => model.GuestCountry)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-0 ">
+                        <strong class="col-md-4 text-left">
+                            @Html.DisplayNameFor(model => model.NumberOfAdults) :
+                        </strong>
+                        <strong class="col-md-8 text-left">
+                            @Html.DisplayFor(model => model.NumberOfAdults)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4">
+                            @Html.DisplayNameFor(model => model.NumberOfChilds) :
+                        </strong>
+                        <strong class="col-md-8">
+                            @Html.DisplayFor(model => model.NumberOfChilds)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4">
+                            @Html.DisplayNameFor(model => model.CheckIn) :
+                        </strong>
+                        <strong class="col-md-8">
+                            @Html.DisplayFor(model => model.CheckIn)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4">
+                            @Html.DisplayNameFor(model => model.CheckOut) :
+                        </strong>
+                        <strong class="col-md-8">
+                            @Html.DisplayFor(model => model.CheckOut)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4">
+                            @Html.DisplayNameFor(model => model.Meal) :
+                        </strong>
+                        <strong class="col-md-8">
+                            @Html.DisplayFor(model => model.Meal.Name)
+                        </strong>
+                    </div>
+
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4">
+                            @Html.DisplayNameFor(model => model.Room) :
+                        </strong>
+                        <strong class="col-md-8">
+                            @Html.DisplayFor(model => model.Room.Name)
+                        </strong>
+                    </div>
+                    
+                    <div class="card-title bg-light p-2">
+                        <strong class="col-md-4">
+                            @Html.DisplayNameFor(model => model.TotalPrice) :
+                        </strong>
+                        <strong class="col-md-8">
+                            @Html.DisplayFor(model => model.TotalPrice)
+                        </strong>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <div>
+                        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-dark">Edit</a> |
+                        <a asp-action="Index" class="btn btn-info">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*<dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GuestName)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GuestName)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GuestEmail)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GuestEmail)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GuestCountry)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GuestCountry)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NumberOfAdults)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NumberOfAdults)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.NumberOfChilds)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.NumberOfChilds)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CheckIn)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CheckIn)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CheckOut)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CheckOut)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Meal)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Meal.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Room)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Room.Name)
+            </dd>
+        </dl>*@
+</div>
+@*<div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-outline-dark">Edit</a> |
+        <a asp-action="Index" class="btn btn-info">Back to List</a>
+    </div>*@

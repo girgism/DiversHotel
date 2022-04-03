@@ -1,0 +1,6 @@
+1- Using .Net CORE 5
+2- Using Identity logins
+3- Using Localization and Globalizarion => Arabic and English Language
+4- Using Database first & Code First
+5- Modefiy Custom identity User
+6- Migrations => Reverse 
